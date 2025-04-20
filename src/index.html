@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Techno Garage - Pusat Pelatihan IT Software & Web</title>
+    <link rel="icon" type="img/svg" href="./img/logo.svg" />
+    <!-- style -->
+    <link rel="stylesheet" href="./output.css" />
+
+    <style>
+      html {
+        scroll-behavior: smooth;
+        overflow-x: hidden;
+      }
+
+      body {
+        overflow-x: hidden;
+      }
+    </style>
+
+    <!-- font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body class="bg-white text-black font-poppins overflow-x-hidden">
+    <header
+      class="bg-white fixed border-b border-gray-200 shadow-sm w-full top-0 left-0 z-50"
+    >
+      <div class="container mx-auto px-4">
+        <div class="flex justify-between items-center py-3">
+          <!-- logo -->
+          <img
+            src="./img/Logo.png"
+            class="w-32 md:w-40"
+            alt="Logo Techno Garage"
+          />
+
+          <!-- Mobile menu button -->
+          <button class="md:hidden p-2 focus:outline-none" id="menu-toggle">
+            <!-- Hamburger Icon (default) -->
+            <svg
+              class="w-6 h-6 hamburger-icon"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 6h16M4 12h16M4 18h16"
+              ></path>
+            </svg>
+            <!-- Close Icon (hidden by default) -->
+            <svg
+              class="w-6 h-6 close-icon hidden"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M6 18L18 6M6 6l12 12"
+              ></path>
+            </svg>
+          </button>
+
+          <!-- Desktop nav -->
+          <nav class="hidden md:flex items-center space-x-6">
+            <a href="#home" class="text-lg hover:text-blue-600 transition"
+              >Beranda</a
+            >
+            <a href="#about" class="text-lg hover:text-blue-600 transition"
+              >Tentang Kami</a
+            >
+            <a href="#course" class="text-lg hover:text-blue-600 transition"
+              >Program Pelatihan</a
+            >
+            <a
+              href="#"
+              class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg ml-4 transition"
+            >
+              Daftar Sekarang
+            </a>
+          </nav>
+        </div>
+
+        <!-- Mobile nav (hidden by default) -->
+        <div class="md:hidden hidden py-4" id="mobile-menu">
+          <div class="flex flex-col space-y-4">
+            <a href="#home" class="block py-2 hover:text-blue-600 transition"
+              >Beranda</a
+            >
+            <a href="#about" class="block py-2 hover:text-blue-600 transition"
+              >Tentang Kami</a
+            >
+            <a href="#course" class="block py-2 hover:text-blue-600 transition"
+              >Program Pelatihan</a
+            >
+            <a
+              href="#"
+              class="bg-blue-600 text-white py-2 px-4 rounded-lg text-center hover:bg-blue-700 transition"
+            >
+              Daftar Sekarang
+            </a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <script>
+      document
+        .getElementById("menu-toggle")
+        .addEventListener("click", function () {
+          const menu = document.getElementById("mobile-menu");
+          const hamburgerIcon = document.querySelector(".hamburger-icon");
+          const closeIcon = document.querySelector(".close-icon");
+
+          // Toggle menu visibility
+          menu.classList.toggle("hidden");
+
+          // Toggle icons
+          hamburgerIcon.classList.toggle("hidden");
+          closeIcon.classList.toggle("hidden");
+        });
+    </script>
+
+    <!-- home section -->
+    <section
+      id="home"
+      class="bg-[url('./img/bg_home.png')] relative text-center bg-cover bg-center flex flex-col items-center justify-center pt-40 pb-32 md:pt-56 md:pb-44 lg:pt-64 lg:pb-52"
+    >
+      <div class="container mx-auto px-4">
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold mb-4">
+          Welcome To Techno Garage
+        </h1>
+        <p class="text-xl sm:text-2xl lg:text-3xl mb-16 sm:mb-20">
+          Pelatihan IT Software Dan Web
+        </p>
+
+        <!-- Kartu dengan margin-top negatif kecil -->
+        <div
+          class="flex flex-col sm:flex-row gap-6 justify-center items-center -mt-8 sm:-mt-12"
+        >
+          <!-- Card 1 -->
+          <div
+            class="p-4 flex items-center bg-white border-2 border-gray-200 shadow-md rounded-xl flex-col w-full max-w-xs"
+          >
+            <img
+              src="./img/laptop-svgrepo-com.svg"
+              alt="Laptop icon"
+              class="w-16 h-16 mb-4"
+            />
+            <p class="text-sm md:text-base">
+              Belajar tentang konsep pemrograman
+            </p>
+          </div>
+
+          <!-- Card 1 -->
+          <div
+            class="p-4 flex items-center bg-white border-2 border-gray-200 shadow-md rounded-xl flex-col w-full max-w-xs"
+          >
+            <img
+              src="./img/code-svgrepo-com.svg"
+              alt="Laptop icon"
+              class="w-16 h-16 mb-4"
+            />
+            <p class="text-sm md:text-base">
+              Praktek membuat dan analisa program
+            </p>
+          </div>
+
+          <!-- Card 1 -->
+          <div
+            class="p-4 flex items-center bg-white border-2 border-gray-200 shadow-md rounded-xl flex-col w-full max-w-xs"
+          >
+            <img
+              src="./img/browser-website-svgrepo-com.svg"
+              alt="Laptop icon"
+              class="w-16 h-16 mb-4"
+            />
+            <p class="text-sm md:text-base">
+              Melakukan publish project ke browser
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section
+      id="about"
+      class="pt-36 pb-32 mt-44 bg-[url('./img/biru.jpg')] bg-cover bg-center object-cover object-center"
+    >
+      <div class="container mx-auto px-[16px]">
+        <div class="flex flex-wrap items-center justify-between">
+          <div
+            class="w-full md:w-1/2 lg:w-1/2 flex justify-center self-center"
+            data-aos="fade-up"
+            data-aos-duration="1000"
+          >
+            <img
+              src="./img/pak.jpeg"
+              class="w-full lg:w-96 md:w-64 md:-ml-7 rounded-xl border border-blue-500 shadow-md shadow-gray"
+              alt=""
+            />
+          </div>
+          <div
+            class="w-full md:w-1/2 lg:w-1/2 self-center pt-5 md:pt-0"
+            data-aos="fade-left"
+          >
+            <h1
+              class="font-semibold mb-2 text-lg md:text-xl text-white lg:text-3xl font-poppins"
+            >
+              Pelatihan IT Software Dan Web
+            </h1>
+            <p
+              class="font-medium text-justify text-sm text-white/90 md:text-base lg:text-xl"
+            >
+              Berawal dari kepedulian terhadap pentingnya pendidikan tambahan di
+              luar sekolah, khususnya dalam membantu siswa memahami materi
+              pelajaran dengan lebih baik, kami mendirikan Techno Garage pada
+              tahun 2022.
+            </p>
+            <p
+              class="font-medium text-justify text-sm text-white/90 md:text-base lg:text-xl"
+            >
+              Dengan mengusung metode pembelajaran yang menyenangkan,
+              interaktif, dan fokus pada kebutuhan siswa, kami terus berkomitmen
+              untuk membantu mencetak generasi yang cerdas, percaya diri, dan
+              berprestasi.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="course" class="py-16 md:py-24 lg:py-36 px-4 sm:px-6 lg:px-8">
+      <div class="container mx-auto flex flex-col items-center">
+        <!-- Heading Section -->
+        <div class="text-center max-w-3xl mx-auto mb-10 md:mb-16">
+          <h1 class="text-2xl sm:text-3xl lg:text-4xl font-semibold mb-4">
+            Kenapa Harus Memilih Techno Garage?
+          </h1>
+          <p class="text-base sm:text-lg lg:text-xl text-gray-600">
+            Techno Garage semaksimal mungkin untuk membuat lingkungan belajar
+            yang nyaman untuk pemula
+          </p>
+        </div>
+
+        <!-- Content Section -->
+        <div class="w-full flex flex-col lg:flex-row gap-8 lg:gap-12">
+          <!-- Left Column - Features -->
+          <div class="w-full lg:w-1/2 space-y-4 sm:space-y-6">
+            <!-- Feature 1 -->
+            <div class="flex items-start p-4 sm:p-6 border-b border-gray-200">
+              <div class="flex-shrink-0 mr-4 sm:mr-6">
+                <div
+                  class="w-12 h-12 sm:w-16 sm:h-16 flex items-center justify-center rounded-full border-2 border-black text-xl sm:text-2xl font-bold"
+                >
+                  1
+                </div>
+              </div>
+              <div>
+                <h3 class="text-lg sm:text-xl font-semibold mb-2">
+                  Kelas Offline
+                </h3>
+                <p class="text-sm sm:text-base text-gray-600">
+                  Langsung gas belajar bareng pemateri, ngobrol asik, dapet
+                  ilmunya mantap!
+                </p>
+              </div>
+            </div>
+
+            <!-- Feature 2 -->
+            <div class="flex items-start p-4 sm:p-6 border-b border-gray-200">
+              <div class="flex-shrink-0 mr-4 sm:mr-6">
+                <div
+                  class="w-12 h-12 sm:w-16 sm:h-16 flex items-center justify-center rounded-full border-2 border-black text-xl sm:text-2xl font-bold"
+                >
+                  2
+                </div>
+              </div>
+              <div>
+                <h3 class="text-lg sm:text-xl font-semibold mb-2">
+                  Suasana Nyaman
+                </h3>
+                <p class="text-sm sm:text-base text-gray-600">
+                  Belajar di lingkungan yang santai, nyaman, dan suportif.
+                </p>
+              </div>
+            </div>
+
+            <!-- Feature 3 -->
+            <div class="flex items-start p-4 sm:p-6">
+              <div class="flex-shrink-0 mr-4 sm:mr-6">
+                <div
+                  class="w-12 h-12 sm:w-16 sm:h-16 flex items-center justify-center rounded-full border-2 border-black text-xl sm:text-2xl font-bold"
+                >
+                  3
+                </div>
+              </div>
+              <div>
+                <h3 class="text-lg sm:text-xl font-semibold mb-2">
+                  Networking Asik
+                </h3>
+                <p class="text-sm sm:text-base text-gray-600">
+                  Kesempatan kenalan dan bangun relasi bareng peserta dan
+                  mentor.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Column - Image -->
+          <div
+            class="w-full lg:w-1/2 flex justify-center items-center mt-8 lg:mt-0"
+          >
+            <img
+              src="./img/web.svg"
+              class="w-96"
+              alt="Ilustrasi kelas Techno Garage"
+              class="w-full max-w-md lg:max-w-lg xl:max-w-xl"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div
+        class="min-h-screen flex flex-col p-8 sm:p-16 md:p-24 justify-center bg-white"
+      >
+        <!-- Themes: blue, purple and teal -->
+        <div data-theme="teal" class="mx-auto max-w-6xl">
+          <h2 class="sr-only">Featured case study</h2>
+          <section class="font-poppins text-black">
+            <div
+              class="[ lg:flex lg:items-center ] [ fancy-corners fancy-corners--large fancy-corners--top-left fancy-corners--bottom-right ]"
+            >
+              <div
+                class="flex-shrink-0 self-stretch sm:flex-basis-40 md:flex-basis-50 xl:flex-basis-60"
+              >
+                <div class="h-full">
+                  <article class="h-full">
+                    <div class="h-full">
+                      <img
+                        class="h-full object-cover"
+                        src="./img/com.jpeg"
+                        width="733"
+                        height="412"
+                        alt='""'
+                        typeof="foaf:Image"
+                      />
+                    </div>
+                  </article>
+                </div>
+              </div>
+              <div class="p-6 bg-grey">
+                <div class="leading-relaxed">
+                  <h2 class="leading-tight text-3xl font-bold">
+                    Ayo Gabung Bersama Kami Sekarang Juga!
+                  </h2>
+                  <p class="mt-4 text-justify">
+                    belajar merupakan proses panjang yang tak akan ada habisnya
+                    dalam hidup. tentunya pasti banyak tantangan dan rintangan
+                    yang akan di hadapi. namun, dengan bersama - sama, rintangan
+                    dan tantangan tersebut akan dengan sangat mudah kita lewati.
+                  </p>
+                  <p class="py-5">
+                    <a
+                      class="mt-6 text-xl px-3 py-4 text-white rounded-md bg-blue-500"
+                      href=""
+                      >Daftar Sekarang</a
+                    >
+                  </p>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
+    </section>
+
+    <footer class="bg-white rounded-lg shadow-sm m-4">
+      <div class="w-full max-w-screen-xl mx-auto p-4 md:py-8">
+        <div class="sm:flex sm:items-center sm:justify-between">
+          <a
+            href=""
+            class="flex items-center mb-4 sm:mb-0 space-x-3 rtl:space-x-reverse"
+          >
+            <img src="./img/logo.svg" class="h-8 w-8" alt="Flowbite Logo" />
+            <span class="self-center text-2xl font-semibold whitespace-nowrap"
+              >Techno Garage</span
+            >
+          </a>
+          <ul
+            class="flex flex-wrap items-center mb-6 text-sm font-medium text-black sm:mb-0"
+          >
+            <li>
+              <a href="#" class="hover:underline me-4 md:me-6">Beranda</a>
+            </li>
+            <li>
+              <a href="#" class="hover:underline me-4 md:me-6">Tentang Kami</a>
+            </li>
+            <li>
+              <a href="#" class="hover:underline me-4 md:me-6"
+                >Program Pelatihan</a
+              >
+            </li>
+            <li>
+              <a href="#" class="hover:underline">Kontak</a>
+            </li>
+          </ul>
+        </div>
+        <hr class="my-6 border-gray-black border sm:mx-auto lg:my-8" />
+        <span class="block text-sm text-gray-500 sm:text-center"
+          >© 2025
+          <a href="https://flowbite.com/" class="hover:underline"
+            >Techno Garage™</a
+          >. All Rights Reserved.</span
+        >
+      </div>
+    </footer>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
